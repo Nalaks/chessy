@@ -41,3 +41,14 @@ export interface DropItem {
   type: string
   id: string
 }
+
+export interface BehaviorType {
+  board: any
+  pendingPromotion?: PendingPromotion
+}
+
+export type PendingPromotion = {
+  from: string
+  to: string
+  color: string
+}

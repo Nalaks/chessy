@@ -1,12 +1,13 @@
 import { FC, useEffect, useState } from 'react'
 import Board from './components/Board'
-import { gameSubject } from './lib/game'
+import { gameSubject, initGame } from './lib/game'
 import './App.css'
 
 const App: FC = () => {
   const [board, setBoard] = useState<any[]>([])
   useEffect(() => {
-    const subscribe = gameSubject.subscribe(game => {
+    initGame()
+    const subscribe = gameSubject.subscribe((game: any) => {
       setBoard(game.board)
     })
     return () => subscribe.unsubscribe()
