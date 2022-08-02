@@ -20,7 +20,7 @@ const App: FC = () => {
     return () => subscribe.unsubscribe()
   }, [])
   return (
-    <div className='container'>
+    <div className='app-container'>
       {isGameOver && (
         <>
           <h2 className='vertical-text'>
