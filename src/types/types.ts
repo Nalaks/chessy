@@ -1,5 +1,6 @@
 export interface BoardProps {
   board: IBoard[]
+  turn: string
 }
 
 export interface BoardSquareProps {
@@ -52,3 +53,16 @@ export type PendingPromotion = {
   to: string
   color: string
 }
+
+export interface PromoteProps {
+  promotion: PendingPromotion
+}
+
+export enum PromotionPieces {
+  r,
+  n,
+  b,
+  q
+}
+
+export type PromotionPiece = keyof typeof PromotionPieces | undefined

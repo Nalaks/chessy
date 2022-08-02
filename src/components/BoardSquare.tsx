@@ -4,6 +4,7 @@ import Piece from './Piece'
 import Square from './Square'
 import { useDrop } from 'react-dnd'
 import { handleMove, gameSubject } from '../lib/game'
+import Promote from './Promote'
 
 const BoardSquare: FC<BoardSquareProps> = ({ piece, black, position }) => {
   const [, drop] = useDrop({
@@ -22,12 +23,15 @@ const BoardSquare: FC<BoardSquareProps> = ({ piece, black, position }) => {
         : setPromotion(null)
     })
     return () => subscribe.unsubscribe()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [position])
   return (
     <div className='board-square' ref={drop}>
       <Square black={black}>
-        {piece && <Piece piece={piece} position={position} />}
+        {promotion ? (
+          <Promote promotion={promotion} />
+        ) : piece ? (
+          <Piece piece={piece} position={position} />
+        ) : null}
       </Square>
     </div>
   )

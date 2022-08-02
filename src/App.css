@@ -21,7 +21,11 @@
 .square {
   width: 12.5%;
   height: 12.5%;
-  background-color: rgb(255, 255, 255);
+}
+
+.promote-square {
+  width: 50%;
+  height: 50%;
 }
 
 .square-black {
@@ -50,4 +54,24 @@
 .piece {
   max-width: 70%;
   max-height: 70%;
+}
+
+.curser-pointer {
+  cursor: pointer;
+}
+
+.vertical-text {
+  text-orientation: upright;
+  writing-mode: vertical-lr;
+  font-family: sans-serif;
+  padding: 10px;
+  color: #F0D9B5;
+}
+
+.new-game-btn {
+  background-color: #B59963;
+  cursor: pointer;
+  margin-top: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
 }
